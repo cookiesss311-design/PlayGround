@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#16291f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e7efdf'/%3E%3Cpath d='M48 13C27 12 13 20 13 36c0 9 7 15 15 15 16 0 24-17 20-38ZM18 47c8-11 17-17 29-25' fill='none' stroke='%23517957' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<title>Willowbrook — A little farm life</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap');
+:root{--ink:#23352b;--muted:#758578;--cream:#f6f2e7;--paper:#fffdf6;--green:#517957;--deep:#294b36;--gold:#eab85b;--line:#e6e2d5;--pink:#e88e79}
+*{box-sizing:border-box}body{margin:0;background:#e8e7d8;color:var(--ink);font-family:'DM Sans',sans-serif;min-height:100vh;display:flex;justify-content:center;align-items:center;padding:24px;overflow-x:hidden}.app{width:min(1180px,100%);background:var(--cream);border:1px solid #dcd9ca;border-radius:20px;box-shadow:0 24px 80px #32412c26;overflow:hidden}.topbar{height:74px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;background:var(--paper);border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px}.brandmark{width:38px;height:38px;border-radius:12px;background:#e7efdf;display:grid;place-items:center;font-size:21px}.brand h1{font:800 21px 'Fraunces',serif;letter-spacing:-.5px;margin:0}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;margin-top:1px}.topright{display:flex;align-items:center;gap:14px}.season{background:#edf2e8;border:1px solid #dbe5d6;color:#4f7455;border-radius:30px;padding:8px 13px;font-size:11px;font-weight:800;letter-spacing:.7px;text-transform:uppercase}.sound{border:0;background:transparent;color:var(--muted);font-size:18px;cursor:pointer;width:35px;height:35px;border-radius:50%}.sound:hover{background:#f0eee3}.game-wrap{padding:18px 22px 14px}.game-frame{position:relative;width:100%;aspect-ratio:16/9;min-height:360px;max-height:610px;border-radius:14px;overflow:hidden;background:#92b478;box-shadow:0 8px 24px #30422c25;border:4px solid #fffdf6}.game-frame canvas{display:block;width:100%;height:100%;image-rendering:pixelated}.hud{position:absolute;inset:0;pointer-events:none;display:flex;justify-content:space-between;padding:15px}.hud>*{pointer-events:auto}.date-card{background:#fffdf2eF;border:1px solid #fff;border-radius:11px;padding:9px 13px;box-shadow:0 3px 8px #273c2820;align-self:flex-start;min-width:122px}.date-card .day{font:700 14px 'Fraunces',serif}.date-card .date-sub{font-size:10px;color:#778071;margin-top:2px}.time-card{background:#fffdf2eF;border:1px solid #fff;border-radius:11px;padding:8px 13px;text-align:right;box-shadow:0 3px 8px #273c2820;align-self:flex-start}.time{font:500 17px 'DM Mono',monospace}.weather{font-size:10px;color:#778071;margin-top:1px}.toast{position:absolute;top:17px;left:50%;transform:translate(-50%,-12px);background:#263e30;color:white;padding:10px 16px;border-radius:9px;font-size:12px;font-weight:700;opacity:0;transition:.22s;white-space:nowrap;box-shadow:0 4px 16px #172a2066}.toast.show{opacity:1;transform:translate(-50%,0)}.interaction{position:absolute;bottom:15px;left:50%;transform:translateX(-50%);background:#fffdf2ec;padding:7px 12px;border:1px solid #ffffff;border-radius:9px;font-size:11px;color:#51614e;white-space:nowrap;box-shadow:0 3px 9px #273c2820}.interaction b{color:#2e4e36}.mobile-actions{display:none;position:absolute;bottom:12px;right:12px;gap:6px}.mobile-actions button{pointer-events:auto;border:1px solid #ffffff;background:#fffdf2ed;border-radius:9px;width:42px;height:42px;font-size:17px;box-shadow:0 2px 6px #273c2820;touch-action:manipulation}.bottom{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:12px;padding:0 22px 19px}.panel{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:13px 15px;min-height:92px}.panel-title{font-size:9px;letter-spacing:1.3px;font-weight:800;color:#8b9588;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.player-row{display:flex;gap:8px}.player{display:flex;align-items:center;gap:8px;background:#f7f5eb;border:1px solid #eeebdf;border-radius:9px;padding:6px 9px;flex:1;min-width:0}.avatar{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:white;font-weight:800;font-size:11px}.andy{background:#df8569}.rifqi{background:#6994a1}.player-name{font-size:11px;font-weight:800;white-space:nowrap}.player-role{font-size:9px;color:#859083;margin-top:1px}.p-dot{margin-left:auto;width:6px;height:6px;border-radius:50%;background:#76a56c}.inventory{display:flex;gap:7px}.slot{flex:1;display:flex;align-items:center;gap:7px;background:#f7f5eb;border:1px solid #eeebdf;border-radius:8px;padding:6px 8px;min-width:0}.slot-icon{font-size:17px}.slot-text{font-size:9px;color:#7a8578;line-height:1.2}.slot-text b{display:block;color:#344a38;font-size:10px}.slot-num{margin-left:auto;font:500 11px 'DM Mono',monospace;color:#60715e}.objective{font-size:11px;font-weight:700;line-height:1.45;color:#455743}.objective span{display:block;font-size:9px;font-weight:500;color:#899486;margin-top:3px}.progress{height:4px;background:#e8eade;border-radius:4px;margin-top:8px;overflow:hidden}.progress i{display:block;height:100%;width:0;background:#82a66e;border-radius:4px;transition:width .3s}.footer{display:flex;justify-content:space-between;padding:11px 26px 15px;color:#899286;font-size:10px;border-top:1px solid #e8e5d9}.footer strong{color:#596a57}.key{display:inline-grid;place-items:center;min-width:19px;height:18px;padding:0 4px;border:1px solid #d8d9cb;border-bottom-width:2px;background:#fffdf6;border-radius:4px;font:500 9px 'DM Mono',monospace;color:#53634f}.overlay{position:absolute;inset:0;background:#1f3828a8;display:none;place-items:center;z-index:5}.overlay.open{display:grid}.modal{width:min(340px,90%);background:#fffdf6;border-radius:16px;padding:25px;text-align:center;box-shadow:0 15px 40px #172a2070}.modal-emoji{font-size:35px}.modal h2{font:800 23px 'Fraunces',serif;margin:8px 0}.modal p{font-size:12px;color:#778071;line-height:1.6}.primary{border:0;background:#507750;color:white;border-radius:9px;padding:11px 17px;font:700 12px 'DM Sans',sans-serif;cursor:pointer}.primary:hover{background:#3d6343}
+@media(max-width:760px){body{padding:0;display:block;background:var(--cream)}.app{border:0;border-radius:0;min-height:100vh;box-shadow:none}.topbar{height:62px;padding:0 15px}.brand h1{font-size:18px}.brandmark{width:34px;height:34px}.season{font-size:9px;padding:7px 10px}.game-wrap{padding:10px 9px 12px}.game-frame{aspect-ratio:4/3;min-height:320px;max-height:58vh;border-width:3px}.hud{padding:9px}.date-card{padding:7px 9px;min-width:100px}.date-card .day{font-size:12px}.date-card .date-sub{font-size:9px}.time-card{padding:6px 9px}.time{font-size:14px}.weather{font-size:9px}.bottom{grid-template-columns:1fr 1fr;padding:0 9px 12px;gap:8px}.panel{padding:10px;min-height:84px}.panel:last-child{grid-column:span 2;min-height:72px}.player-row{gap:5px}.player{padding:5px 6px;gap:5px}.player-name{font-size:10px}.player-role{font-size:8px}.avatar{width:25px;height:25px}.slot{padding:5px;gap:4px}.slot-icon{font-size:15px}.slot-text{font-size:8px}.slot-text b{font-size:9px}.footer{padding:10px 12px 14px;font-size:9px}.interaction{bottom:12px;font-size:10px;padding:6px 9px}.mobile-actions{display:flex}.toast{font-size:10px;padding:8px 11px;top:58px}.topright{gap:4px}}
+@media(max-width:380px){.season{display:none}.game-frame{min-height:290px}.slot{gap:2px;padding:4px}.inventory{gap:4px}}
+.touch-pad{display:none;position:absolute;left:12px;bottom:12px;width:112px;height:112px;pointer-events:none;grid-template:repeat(3,1fr)/repeat(3,1fr);gap:3px}.touch-pad button{pointer-events:auto;border:1px solid #fff;background:#fffdf2df;border-radius:9px;color:#405642;font-size:15px;box-shadow:0 2px 6px #273c2820;touch-action:none}.touch-pad button:nth-child(1){grid-area:1/2}.touch-pad button:nth-child(2){grid-area:2/1}.touch-pad button:nth-child(3){grid-area:2/2}.touch-pad button:nth-child(4){grid-area:2/3}@media(max-width:760px){.touch-pad{display:grid}.interaction{bottom:128px}.mobile-actions{bottom:12px;left:auto;right:10px}}@media(max-width:420px){.touch-pad{width:96px;height:96px}.interaction{bottom:112px}}
+</style>
+</head>
+<body>
+<main class="app">
+<header class="topbar"><div class="brand"><div class="brandmark">🌱</div><div><h1>Willowbrook</h1><small>Little farm, big days</small></div></div><div class="topright"><div class="season">☀ &nbsp;Spring • Year 1</div><button class="sound" id="soundBtn" aria-label="Toggle sound">♫</button></div></header>
+<section class="game-wrap"><div class="game-frame"><canvas id="game" aria-label="Willowbrook farm game"></canvas><div class="hud"><div class="date-card"><div class="day" id="dayLabel">Mon, 1st</div><div class="date-sub">Spring · Year 1</div></div><div class="time-card"><div class="time" id="clock">06:00 AM</div><div class="weather">☀ &nbsp;Sunny day</div></div></div><div class="toast" id="toast"></div><div class="interaction" id="hint"><b>E</b> interact &nbsp;·&nbsp; <b>1</b> seeds &nbsp; <b>2</b> water</div><div class="mobile-actions"><button data-action="interact" aria-label="Interact">✦</button><button data-action="plant" aria-label="Plant">🌱</button><button data-action="water" aria-label="Water">💧</button></div><div class="touch-pad" aria-label="Movement controls"><button data-move="w">▲</button><button data-move="a">◀</button><button data-move="s">▼</button><button data-move="d">▶</button></div><div class="overlay" id="dayOverlay"><div class="modal"><div class="modal-emoji">🌙</div><h2>A lovely day!</h2><p id="daySummary">The farm is ready for tomorrow.</p><button class="primary" id="nextDay">Wake up to day 2 →</button></div></div></div></section>
+<section class="bottom"><div class="panel"><div class="panel-title">Your farmers <span>2-player co-op</span></div><div class="player-row"><div class="player"><div class="avatar andy">A</div><div><div class="player-name">Andy</div><div class="player-role">WASD · move</div></div><i class="p-dot"></i></div><div class="player"><div class="avatar rifqi">R</div><div><div class="player-name">Rifqi</div><div class="player-role">Arrows · move</div></div><i class="p-dot"></i></div></div></div>
+<div class="panel"><div class="panel-title">Farm bag <span id="goldCount">◈ 120g</span></div><div class="inventory"><div class="slot"><span class="slot-icon">🌱</span><span class="slot-text"><b>Parsnip seeds</b>ready to plant</span><span class="slot-num" id="seedCount">8</span></div><div class="slot"><span class="slot-icon">💧</span><span class="slot-text"><b>Water</b>watering can</span><span class="slot-num">∞</span></div></div></div>
+<div class="panel"><div class="panel-title">Today’s little goal <span id="goalCount">0 / 4</span></div><div class="objective" id="objective">Plant 4 parsnip seeds<span>Walk to a tilled patch and press E to plant.</span></div><div class="progress"><i id="goalProgress"></i></div></div></section>
+<footer class="footer"><span><strong>Andy:</strong> <span class="key">W</span><span class="key">A</span><span class="key">S</span><span class="key">D</span> &nbsp; <strong>Rifqi:</strong> <span class="key">↑</span><span class="key">←</span><span class="key">↓</span><span class="key">→</span></span><span>Made for slow mornings &nbsp;✿</span></footer>
+</main>
+<script>
+(()=>{
+const canvas=document.getElementById('game'),ctx=canvas.getContext('2d');
+const TILE=32, COLS=30, ROWS=18;
+let w=0,h=0,scale=1,offsetX=0,offsetY=0,last=0,toastTimer=0,keys={},day=1,minute=360,seed=8,gold=120,planted=0,harvested=0,tool='interact',sound=true;
+const plots=[];
+// Farm plot coordinates in the world grid
+for(let y=8;y<=11;y++)for(let x=14;x<=18;x++)plots.push({x,y,tilled:true,seeded:false,watered:false,grow:0});
+const players=[{name:'Andy',x:12.6,y:10.1,color:'#df8569',hair:'#613c34',accent:'#f2cda5',face:'#f4cba3',dir:1,walk:0,keys:['w','a','s','d'],id:0},{name:'Rifqi',x:12.6,y:12.2,color:'#6994a1',hair:'#293c4a',accent:'#d8ebd9',face:'#b97e5e',dir:1,walk:0,keys:['arrowup','arrowleft','arrowdown','arrowright'],id:1}];
+const flowers=['#f2df79','#efb6a2','#f4f0dc','#df9abc'];
+function resize(){const r=canvas.getBoundingClientRect();const dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.floor(r.width*dpr);canvas.height=Math.floor(r.height*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);w=r.width;h=r.height;scale=Math.min(w/(COLS*TILE),h/(ROWS*TILE));offsetX=(w-COLS*TILE*scale)/2;offsetY=(h-ROWS*TILE*scale)/2}
+window.addEventListener('resize',resize);resize();
+function rnd(x,y,n=0){let a=Math.sin(x*127.1+y*311.7+n*74.7)*43758.5453;return a-Math.floor(a)}
+function tile(x,y,color){ctx.fillStyle=color;ctx.fillRect(offsetX+x*TILE*scale,offsetY+y*TILE*scale,TILE*scale+0.5,TILE*scale+0.5)}
+function rect(x,y,ww,hh,color){ctx.fillStyle=color;ctx.fillRect(offsetX+x*TILE*scale,offsetY+y*TILE*scale,ww*TILE*scale,hh*TILE*scale)}
+function circle(x,y,r,color){ctx.fillStyle=color;ctx.beginPath();ctx.arc(offsetX+x*TILE*scale,offsetY+y*TILE*scale,r*TILE*scale,0,Math.PI*2);ctx.fill()}
+function path(x1,y1,x2,y2,color,width=1){ctx.strokeStyle=color;ctx.lineWidth=width*TILE*scale;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(offsetX+x1*TILE*scale,offsetY+y1*TILE*scale);ctx.lineTo(offsetX+x2*TILE*scale,offsetY+y2*TILE*scale);ctx.stroke()}
+function drawGround(){
+ for(let y=0;y<ROWS;y++)for(let x=0;x<COLS;x++){let v=rnd(x,y);tile(x,y,v>.75?'#8faf72':v>.45?'#91b678':'#95b97b');if(v>.88){ctx.fillStyle='#bad08b';ctx.fillRect(offsetX+(x*32+5+rnd(x,y,2)*19)*scale,offsetY+(y*32+8+rnd(x,y,3)*18)*scale,2*scale,2*scale)}}
+ // darker meadow fringe
+ for(let x=0;x<COLS;x++){tile(x,0,'#83a96e');tile(x,ROWS-1,'#81a56c')}
+ // winding gravel path
+ path(2.1,14.2,27.8,14.2,'#c9b58e',2.2);path(7.5,14.2,8.5,17,'#c9b58e',2.1);path(22.5,14.2,22,17,'#c9b58e',2.1);
+ for(let i=0;i<95;i++){let x=rnd(i,3,7)*29+.5,y=14.2+(rnd(i,6,3)-.5)*1.5;circle(x,y,.035,'#aa9878')}
+ // farmhouse
+ rect(2.2,2.1,7.5,5.1,'#e5d9b8');rect(1.7,1.8,8.5,1.1,'#923f3c');rect(2.5,1.1,6.9,.9,'#a94e46');
+ // roof scallops and highlights
+ for(let x=2;x<10;x+=.5){path(x,1.8,x+.28,1.8,'#c66d5c',.06)}
+ rect(2.7,3,1.4,1.3,'#9cc9c0');rect(2.82,3.12,1.15,1.05,'#b7dfd2');path(3.4,3.12,3.4,4.17,'#7c9c8b',.06);path(2.82,3.65,3.97,3.65,'#7c9c8b',.06);
+ rect(7.7,3,1.4,1.3,'#9cc9c0');rect(7.82,3.12,1.15,1.05,'#b7dfd2');path(8.4,3.12,8.4,4.17,'#7c9c8b',.06);path(7.82,3.65,8.97,3.65,'#7c9c8b',.06);
+ rect(5.1,4.4,1.7,2.8,'#765244');rect(5.3,4.65,1.3,2.55,'#8e624c');circle(6.45,5.9,.08,'#f3d577');
+ // chimney
+ rect(8.1,.9,.7,1.5,'#9d5548');
+ // roof trim
+ path(1.8,2.8,1.8,7.1,'#d0bea0',.09);path(10.2,2.8,10.2,7.1,'#d0bea0',.09);
+ // small porch and garden gate
+ rect(4.5,7.15,2.9,.6,'#a78059');path(4.6,7.4,7.4,7.4,'#e0c493',.1);
+ // pond
+ circle(25.1,5.4,3.05,'#709f92');circle(25.1,5.35,2.65,'#6faeaa');circle(24.4,4.7,.6,'#90c7b5');circle(26.1,5.9,.35,'#7cb8ad');
+ // water glints
+ for(let i=0;i<9;i++)path(23.5+rnd(i,2)*3,4+rnd(i,4)*2.5,23.7+rnd(i,2)*3,4+rnd(i,4)*2.5,'#b3d9bd',.05);
+ // reeds and lily pads
+ for(let i=0;i<11;i++){let x=22.3+rnd(i,8)*5.5,y=2.3+rnd(i,7)*6.2;if(Math.hypot(x-25.1,y-5.4)>2.35){path(x,y,x-.05,y-.35,'#587e54',.07);circle(x,y,.09,'#b0c978')}}
+ // garden beds
+ for(const p of plots){let X=p.x,Y=p.y;tile(X,Y,p.seeded?'#78583d':'#76563d');rect(X+.08,Y+.08,.84,.84,p.seeded?'#8c6844':'#896446');if(p.seeded){if(p.grow===0){circle(X+.5,Y+.51,.12,'#9ec85e');path(X+.5,Y+.55,X+.5,Y+.31,'#598f47',.08)}else{for(let q=0;q<3;q++){path(X+.49,Y+.59,X+.35+q*.14,Y+.25-(q===1?.06:0),'#548747',.09);circle(X+.33+q*.14,Y+.25,.1,'#77ad54')}}if(p.watered)for(let q=0;q<4;q++)circle(X+.25+(q%2)*.5,Y+.26+Math.floor(q/2)*.46,.025,'#a7d7e5')}else{path(X+.2,Y+.5,X+.8,Y+.5,'#a37e59',.04);path(X+.2,Y+.65,X+.8,Y+.65,'#a37e59',.04)}}
+ // fence around farm edges and flower patches
+ for(let x=.5;x<29;x+=1){if(x>10&&x<20)continue;if(rnd(x,13,6)>.3){rect(x,16.9,.07,.7,'#785744');rect(x-.07,17,.21,.08,'#aa855f')}}
+ // bushes, trees and pebble clusters
+ drawTree(12,4,.85);drawTree(19,3,1.05);drawTree(28,9,.9);drawTree(3,10,.88);drawTree(11,15,.8);drawTree(27,15,.75);drawTree(1,5,.65);
+ for(let i=0;i<40;i++){let x=rnd(i,44)*29,y=rnd(i,49)*17;if((x>1&&x<10&&y>1&&y<8)||(x>13&&x<19&&y>7&&y<12)||(x>22&&x<28&&y>2&&y<8))continue;if(rnd(i,5,9)>.62){circle(x,y,.045,'#6c8d58');circle(x+.09,y+.04,.04,flowers[i%4])}}
+ // signpost
+ rect(11,7.2,.12,1,'#77543b');rect(10.5,7.1,1.1,.38,'#dbbd7a');
+}
+function drawTree(x,y,s){circle(x+.12*s,y+.55*s,.48*s,'#7c9c5d');circle(x-.23*s,y+.34*s,.4*s,'#88a964');circle(x+.42*s,y+.28*s,.38*s,'#9ab86d');circle(x+.06*s,y+.12*s,.42*s,'#91b16a');rect(x-.06*s,y+.45*s,.13*s,.5*s,'#826046');circle(x-.1*s,y+.3*s,.05*s,'#b7ca7b');}
+
+const el=id=>document.getElementById(id);
+const toastEl=el('toast');
+const hintEl=el('hint');
+const goalEl=el('objective');
+const goalCountEl=el('goalCount');
+const goalBar=el('goalProgress');
+const weekday=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+let goalMessage='Plant 4 parsnip seeds';
+
+function notify(message){toastEl.textContent=message;toastEl.classList.add('show');toastTimer=2.3}
+function nearestPlot(){
+ let best=null,bestDist=1.2;
+ for(const plot of plots){
+  const dist=Math.min(...players.map(p=>Math.hypot(p.x-(plot.x+.5),p.y-(plot.y+.5))));
+  if(dist<bestDist){best=plot;bestDist=dist}
+ }
+ return best;
+}
+function plotAction(plot){
+ if(!plot.seeded)return 'plant';
+ return plot.ready?'harvest':'water';
+}
+function useAction(action='interact'){
+ const plot=nearestPlot();
+ if(!plot){notify('Walk up to a garden bed first.');return}
+ const next=plotAction(plot);
+ if(action==='plant'&&next!=='plant'){notify('That plot is already planted.');return}
+ if(action==='water'&&next!=='water'){notify(next==='plant'?'Plant a seed here first.':'This parsnip is ready to pick!');return}
+ if(action==='interact')action=next;
+ if(action==='plant'){
+  if(seed<=0){notify('You are out of seeds.');return}
+  plot.seeded=true;plot.watered=false;plot.grow=0;seed--;planted++;notify('Parsnip planted! Water it to help it grow.');
+ }else if(action==='water'){
+  if(!plot.seeded){notify('Plant a seed here first.');return}
+  if(plot.ready){notify('Your parsnip is ready to harvest!');return}
+  if(plot.watered){notify('This crop is already watered.');return}
+  plot.watered=true;notify('Splash! The parsnip is watered.');
+ }else if(action==='harvest'){
+  if(!plot.ready){notify('This crop is not ready yet.');return}
+  plot.seeded=false;plot.watered=false;plot.grow=0;plot.ready=false;harvested++;gold+=20;notify('Parsnip harvested — +20g!');
+ }
+ updateHud();
+}
+function updateHud(){
+ const d=minute>=360?minute-360:minute+1080;
+ const hh=Math.floor(d/60),mm=Math.floor(d%60);
+ const hour=hh%24,ampm=hour>=12?'PM':'AM',shown=hour%12||12;
+ el('clock').textContent=String(shown).padStart(2,'0')+':'+String(mm).padStart(2,'0')+' '+ampm;
+ el('dayLabel').textContent=weekday[(day-1)%7]+', '+day+(day%100>=11&&day%100<=13?'th':day%10===1?'st':day%10===2?'nd':day%10===3?'rd':'th');
+ el('seedCount').textContent=seed;el('goldCount').textContent='◈ '+gold+'g';
+ let stage='Plant 4 parsnip seeds',progress=planted,target=4,desc='Walk to a tilled patch and press E to plant.';
+ if(planted>=4){stage='Water the sprouts';progress=plots.filter(p=>p.seeded&&p.watered).length;target=4;desc='Select a planted plot and water it.'}
+ if(harvested>=4){stage='Harvest 4 crops';progress=harvested;target=4;desc='Pick the ripe golden parsnips.'}
+ if(harvested>=4){stage='Harvest 4 crops';progress=harvested;target=4;desc='Pick the ripe golden parsnips.'}
+ goalEl.innerHTML=stage+'<span>'+desc+'</span>';goalCountEl.textContent=Math.min(progress,target)+' / '+target;goalBar.style.width=Math.min(100,progress/target*100)+'%';
+ const plot=nearestPlot();
+ hintEl.innerHTML=plot?'<b>E</b> '+({plant:'plant parsnip',water:'water crop',harvest:'harvest parsnip'}[plotAction(plot)]):'<b>E</b> interact &nbsp;·&nbsp; <b>1</b> seeds &nbsp; <b>2</b> water';
+}
+function updatePlayers(dt){
+ for(const p of players){
+  let dx=(keys[p.keys[3]]?1:0)-(keys[p.keys[1]]?1:0),dy=(keys[p.keys[2]]?1:0)-(keys[p.keys[0]]?1:0);
+  const len=Math.hypot(dx,dy)||1,speed=3.1;
+  if(dx||dy){p.x=Math.max(.7,Math.min(29.1,p.x+dx/len*speed*dt));p.y=Math.max(.9,Math.min(16.5,p.y+dy/len*speed*dt));p.dir=dx<0?-1:dx>0?1:p.dir;p.walk+=dt*13}
+ }
+}
+function updateCrops(dt){
+ for(const p of plots){if(!p.seeded||!p.watered||p.ready)continue;p.grow=Math.min(1,p.grow+dt/24);if(p.grow>=1){p.ready=true;p.watered=false;notify('A parsnip is ripe! Go harvest it.')}}
+}
+function paintPlayers(){
+ for(const p of players){
+  const x=p.x,y=p.y,px=offsetX+x*TILE*scale,py=offsetY+y*TILE*scale,s=TILE*scale,bob=Math.sin(p.walk)*1.3*scale;
+  ctx.fillStyle='#32462d55';ctx.beginPath();ctx.ellipse(px+s*.5,py+s*.84,s*.27,s*.1,0,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle='#513e35';ctx.fillRect(px+s*.26,py+s*.65+bob,s*.16,s*.24);ctx.fillRect(px+s*.55,py+s*.65+bob,s*.16,s*.24);
+  ctx.fillStyle=p.color;ctx.fillRect(px+s*.19,py+s*.39+bob,s*.56,s*.33);
+  ctx.fillStyle=p.face;ctx.fillRect(px+s*.25,py+s*.14+bob,s*.45,s*.3);
+  ctx.fillStyle=p.hair;ctx.fillRect(px+s*.23,py+s*.11+bob,s*.49,s*.14);
+  ctx.fillStyle='#28362d';ctx.fillRect(px+s*.34,py+s*.27+bob,s*.045,s*.045);ctx.fillRect(px+s*.56,py+s*.27+bob,s*.045,s*.045);
+  ctx.fillStyle='#fff9e8';ctx.fillRect(px+s*.03,py-s*.19+bob,s*.9,s*.22);
+  ctx.fillStyle='#314b37';ctx.font=`bold ${Math.max(9,11*scale)}px sans-serif`;ctx.textAlign='center';ctx.fillText(p.name,px+s*.48,py-s*.035+bob);
+ }
+}
+function render(){
+ ctx.clearRect(0,0,w,h);drawGround();paintPlayers();
+}
+function frame(ts){
+ const dt=Math.min(.05,Math.max(0,(ts-last)/1000||0));last=ts;
+ updatePlayers(dt);updateCrops(dt);
+ minute+=dt*.42;
+ if(minute>=1260){minute=360;day++;notify('A new morning begins!');for(const p of plots)if(p.seeded&&!p.ready)p.watered=false}
+ if(toastTimer>0&&(toastTimer-=dt)<=0)toastEl.classList.remove('show');
+ updateHud();render();requestAnimationFrame(frame);
+}
+function setKey(key,value){keys[key]=value}
+window.addEventListener('keydown',e=>{
+ const key=e.key.toLowerCase();
+ if(['arrowup','arrowdown','arrowleft','arrowright',' '].includes(key))e.preventDefault();
+ if(!keys[key]){if(key==='e'||key===' '||key==='enter')useAction();if(key==='1')useAction('plant');if(key==='2')useAction('water');if(key==='m'){sound=!sound;el('soundBtn').textContent=sound?'♫':'🔇'}}
+ setKey(key,true);
+});
+window.addEventListener('keyup',e=>setKey(e.key.toLowerCase(),false));
+window.addEventListener('blur',()=>{keys={}});
+document.querySelectorAll('[data-action]').forEach(button=>button.addEventListener('pointerdown',e=>{e.preventDefault();useAction(button.dataset.action==='interact'?'interact':button.dataset.action)}));
+document.querySelectorAll('[data-move]').forEach(button=>{
+ const key=button.dataset.move;
+ button.addEventListener('pointerdown',e=>{e.preventDefault();button.setPointerCapture(e.pointerId);setKey(key,true)});
+ for(const eventName of ['pointerup','pointercancel','lostpointercapture'])button.addEventListener(eventName,()=>setKey(key,false));
+});
+el('soundBtn').addEventListener('click',()=>{sound=!sound;el('soundBtn').textContent=sound?'♫':'🔇'});
+resize();updateHud();requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
